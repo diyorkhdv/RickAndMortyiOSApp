@@ -35,7 +35,8 @@ class RMCharacterListViewViewModel: NSObject {
     private var apiInfo: Info? = nil
     
     public var shouldShowLoadMoreIndicator: Bool {
-        return apiInfo?.next != nil
+        let status = apiInfo?.next != nil
+        return status
     }
     // MARK: - Fetch Methods
     /// Fetch inital set of characters (20)
@@ -47,6 +48,7 @@ class RMCharacterListViewViewModel: NSObject {
                 let info = responseModel.info
                 self?.characters = results
                 self?.apiInfo = info
+                print("ApiInfo: \(info.next)")
                 DispatchQueue.main.async {
                     self?.delegate?.didLoadIinitialCharacters()
                 }
@@ -62,7 +64,7 @@ class RMCharacterListViewViewModel: NSObject {
         }
         isLoadingMoreCharacters = true
         print("Fetching more characters")
-        
+        // query request
         guard let request = RMRequest(url: url) else {
             isLoadingMoreCharacters = false
             print("Failed to create request")
@@ -77,7 +79,7 @@ class RMCharacterListViewViewModel: NSObject {
                 let moreResults = responseModel.results
                 let info = responseModel.info
                 strongSelf.apiInfo = info
-                
+                print("ApiInfo2: \(info.next)")
                 let originalCount = strongSelf.characters.count
                 let newCount = moreResults.count
                 let total = originalCount + newCount

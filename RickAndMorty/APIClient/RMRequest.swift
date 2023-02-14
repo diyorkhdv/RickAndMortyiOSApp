@@ -60,6 +60,7 @@ final class RMRequest {
     }
     convenience init?(url: URL) {
         let string = url.absoluteString
+        print("absoluteString: \(string)")
         if !string.contains(Constants.baseUrl) {
             return nil
         }
@@ -74,7 +75,9 @@ final class RMRequest {
                 }
             }
         } else if trimmed.contains("?") {
-            let components = trimmed.components(separatedBy: "?")
+            print("trimmed \(trimmed)") // character?page=2
+            let components = trimmed.components(separatedBy: "?") // makes array from 'trimmed'
+            print("components \(components)") // ["character", "page=2"]
             if !components.isEmpty, components.count >= 2 {
                 let endpointString = components[0]
                 let queryItemsString = components[1]
@@ -83,11 +86,11 @@ final class RMRequest {
                         return nil
                     }
                     let parts = $0.components(separatedBy: "=")
-                    
+                    print("parts[0] \(parts[0]), parts[1] \(parts[1])") // parts[0] page, parts[1] 2
                     return URLQueryItem(name: parts[0], value: parts[1])
-                    
                 })
                 if let rmEndpoint = RMEndpoint(rawValue: endpointString) {
+                    print("endpointString: \(endpointString)")
                     self.init(endpoint: rmEndpoint, queryParameters: queryItems)
                     return
                 }
@@ -97,5 +100,6 @@ final class RMRequest {
     }
 }
 extension RMRequest {
+    // path request
     static let listCharactersRequests = RMRequest(endpoint: .character)
 }

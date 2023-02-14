@@ -36,6 +36,7 @@
 		BB5CEB7C299AA41200517ADC /* RMCharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5CEB7B299AA41200517ADC /* RMCharacterDetailView.swift */; };
 		BB5CEB7E299AA43000517ADC /* RMCharacterDetailViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5CEB7D299AA43000517ADC /* RMCharacterDetailViewViewModel.swift */; };
 		BB5CEB80299ABFE500517ADC /* RMFooterLoadingCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5CEB7F299ABFE500517ADC /* RMFooterLoadingCollectionReusableView.swift */; };
+		BB5CEB82299C058700517ADC /* RMImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5CEB81299C058700517ADC /* RMImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		BB5CEB7B299AA41200517ADC /* RMCharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterDetailView.swift; sourceTree = "<group>"; };
 		BB5CEB7D299AA43000517ADC /* RMCharacterDetailViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterDetailViewViewModel.swift; sourceTree = "<group>"; };
 		BB5CEB7F299ABFE500517ADC /* RMFooterLoadingCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMFooterLoadingCollectionReusableView.swift; sourceTree = "<group>"; };
+		BB5CEB81299C058700517ADC /* RMImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 		BB5CEB4829926B0500517ADC /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				BB5CEB81299C058700517ADC /* RMImageLoader.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				BB5CEB5F29928E5800517ADC /* RMEndpoint.swift in Sources */,
 				BB5CEB4C29926B9A00517ADC /* RMLocation.swift in Sources */,
 				BB5CEB77299A5E7000517ADC /* RMCharacterCollectionViewCellViewModel.swift in Sources */,
+				BB5CEB82299C058700517ADC /* RMImageLoader.swift in Sources */,
 				BB5CEB5D299286B500517ADC /* RMRequest.swift in Sources */,
 				BB5CEB6F299948E700517ADC /* RMCharacterListViewViewModel.swift in Sources */,
 				BB5CEB5229926C9100517ADC /* RMCharacterViewController.swift in Sources */,

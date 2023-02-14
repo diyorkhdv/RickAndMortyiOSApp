@@ -77,6 +77,7 @@ final class RMCharacterListView: UIView {
 extension RMCharacterListView: RMCharacterListViewViewModelDelegate {
     func didLoadMoreCharacters(with newIndexPaths: [IndexPath]) {
         collectionView.performBatchUpdates {
+            print("Indexpaths: \(newIndexPaths)")
             self.collectionView.insertItems(at: newIndexPaths)
         }
     }
